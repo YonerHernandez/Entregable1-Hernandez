@@ -22,11 +22,11 @@ function catalogo() {
 function agregarCarrito(index) {
     if (index >= 0 && index < productos.length) {
         carrito.push(productos[index])
-        console.log("Producto agregado al carrito: " + productos[index] + "\n")
-        alert("¡Estupendo! Agregaste: " + productos[index])
+        console.log("¡Estupendo! Agregaste: " + productos[index] + "\n")
+        alert("¡Estupendo! Agregaste: " + productos[index] + "\n")
     } else {
-        console.log("Índice no válido.\n")
-        alert("Opcion Incorrecta. Por favor, elige un número correcto.")
+        console.log("Opcion Incorrecta. Por favor, elige un número correcto.\n")
+        alert("Opcion Incorrecta. Por favor, elige un número correcto.\n")
     }
    
 }
@@ -34,13 +34,14 @@ function agregarCarrito(index) {
 function mostrarCarrito() {
     if (carrito.length === 0) {
         console.log("El carrito está vacío.\n")
+        alerta("El carrito está vacío.\n")
     } else {
         let carritoContenido = "Productos en el carrito:\n"
         for (let i = 0; i < carrito.length; i++) {
             carritoContenido = carritoContenido + (i + 1) + ". " + carrito[i] + "\n"
         }
         alert("Productos en el carrito: \n" + carrito)
-        console.log(carritoContenido)
+        console.log("Productos en el carrito: \n" + carritoContenido)
     }
     
 }
@@ -49,8 +50,10 @@ function eliminarDelCarrito(index) {
     if (index >= 0 && index < carrito.length) {
         const productoEliminado = carrito.splice(index, 1)
         console.log("Producto eliminado del carrito: " + productoEliminado + "\n")
+        alert("Producto eliminado del carrito: " + productoEliminado + "\n")
     } else {
-        console.log("Índice no válido.\n");
+        console.log("Numero no válido.\n")
+        alert ("Numero no válido.\n")
     }
 }
 
@@ -74,7 +77,7 @@ function interactuarConCatalogo() {
 
             case 2:
                 const indexAgregar = prompt("¿Qué producto deseas agregar al carrito? (Elige un Producto: \n 0= Aaumentador de Peso \n 1= Proteina \n 2= Creatina \n 3= Multivitaminico \n 4= Omega 3")
-                agregarCarrito(parseInt(indexAgregar) )
+                agregarCarrito(parseInt(indexAgregar))
                 break
             
             case 3:
@@ -83,7 +86,7 @@ function interactuarConCatalogo() {
 
             case 4:
                 const indexEliminar = prompt("¿Qué producto deseas eliminar del carrito? (Elige un número):")
-                eliminarDelCarrito(parseInt(indexEliminar) ) 
+                eliminarDelCarrito(parseInt(indexEliminar)) 
                 break
 
             case 5:
@@ -94,7 +97,7 @@ function interactuarConCatalogo() {
 
             default:
                 console.log("Opción no válida. Por favor, elige un número entre 1 y 5.\n")
-                alert("Opcion Incorrecta. Por favor, elige una Opcion correcta.")
+                alert("Opción no válida. Por favor, elige un número entre 1 y 5.\n")
         }
     }
 }
