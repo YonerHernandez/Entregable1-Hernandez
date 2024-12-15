@@ -4,14 +4,12 @@ let TuNombre = prompt("Ingrese tu Nombre")
 
 console.log(TuNombre)
 
-// los productos
 const productos = [
     "Aumentador de Peso: 300USD", "Proteina: 250USD", "Creatina: 250USD", "Multivitaminico: 200USD", "Omega 3: 400USD",
 ]
 
 let carrito = []
 
-// Función para mostrar el catálogo
 function catalogo() {
     let menu = "Productos Disponibles:\n"  
     for (let i = 0; i < productos.length; i++) {
@@ -21,7 +19,6 @@ function catalogo() {
     alert("Genial, excelente opción este es nuestro catalogo disponible en estos momentos..!! :) \n \n" + menu)
 }
 
-// Función para agregar 
 function agregarCarrito(index) {
     if (index >= 0 && index < productos.length) {
         carrito.push(productos[index])
@@ -34,7 +31,6 @@ function agregarCarrito(index) {
    
 }
 
-// Función para mostrar los productos en el carrito
 function mostrarCarrito() {
     if (carrito.length === 0) {
         console.log("El carrito está vacío.\n")
@@ -49,11 +45,10 @@ function mostrarCarrito() {
     
 }
 
-// Función para eliminar producto
 function eliminarDelCarrito(index) {
     if (index >= 0 && index < carrito.length) {
-        const productoEliminado = carrito.splice(index, 1);
-        console.log("Producto eliminado del carrito: " + productoEliminado + "\n"); // Usamos \n para el salto de línea
+        const productoEliminado = carrito.splice(index, 1)
+        console.log("Producto eliminado del carrito: " + productoEliminado + "\n")
     } else {
         console.log("Índice no válido.\n");
     }
@@ -104,4 +99,4 @@ function interactuarConCatalogo() {
     }
 }
 
-interactuarConCatalogo();
+interactuarConCatalogo()
